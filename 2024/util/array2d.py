@@ -4,7 +4,7 @@ def array_2d_get_or_default(array, w, h, x, y, default = None):
     return default
 
 
-def array_2d_print(array, column_divider=" | "):
+def array_2d_print(array, column_divider=""):
     # Calculate the maximum width of each column
     col_widths = [max(len(str(item)) for item in col) for col in zip(*array)]
 

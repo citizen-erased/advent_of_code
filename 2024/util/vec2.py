@@ -21,6 +21,9 @@ class vec2:
             return vec2(self.x % other.x, self.y % other.y)
         return vec2(self.x % other, self.y % other)
     
+    def __neg__(self):
+        return vec2(-self.x, -self.y)
+    
     def __repr__(self):
         return f"({self.x}, {self.y})"
 
