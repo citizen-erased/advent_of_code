@@ -91,15 +91,15 @@ def dfs(digits, i):
         digits[i] = x
 
         A = 0
-        for y in range(16):
-            A = A | (digits[y] << ((15-y)*3))
+        for s, d in enumerate(reversed(digits)):
+            A = A | (d << (s*3))
 
         out = execute(A, B, C, instructions)
     
         if out[-i-1] == instructions[-i-1]:
-            if i == len(digits) - 1 and out == instructions:
-                print(A)
-            else:
+            if i < len(digits) - 1:
                 dfs(digits, i + 1)
+            elif out == instructions:
+                print(A)
             
 dfs([0 for _ in range(16)], 0)
