@@ -20,6 +20,9 @@ class vec2:
         if isinstance(other, vec2):
             return vec2(self.x % other.x, self.y % other.y)
         return vec2(self.x % other, self.y % other)
+
+    def __abs__(self):
+        return vec2(abs(self.x), abs(self.y))
     
     def __neg__(self):
         return vec2(-self.x, -self.y)

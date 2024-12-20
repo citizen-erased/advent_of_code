@@ -1,3 +1,6 @@
+def array_2d_create(w, h, value=None):
+    return [[value for _ in range(w)] for _ in range(h)]
+    
 def array_2d_get_or_default(array, w, h, x, y, default = None):
     if 0 <= x < w and 0 <= y < h:
         return array[y][x]
