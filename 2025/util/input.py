@@ -15,9 +15,12 @@ def read_single_line(input_filename):
         return [line.strip() for line in f][0]
 
 
-def read_lines(input_filename):
+def read_lines(input_filename, strip=True):
     with open(_read_path(input_filename)) as f:
-        return [line.strip() for line in f]
+        if strip:
+            return [line.strip() for line in f]
+        else:
+            return [line for line in f]
 
 
 def read_map(input_filename):
